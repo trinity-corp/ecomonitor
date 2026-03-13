@@ -2,7 +2,9 @@
 
 ##
 EcoMonitor is a web platform for monitoring EcoMonitor devices, such as GasGuard, TempGuard and HumidGuard.
-It provides user authentication, device registration by serial number, real-time dashboards, device management.  
+It provides user authentication, device registration by serial number, real-time dashboards, device management.
+
+See also: *[Device Firmware Repository](https://github.com/galukosi/ecomonitor-firmware)*
 
 ![Знімок екрана_20-11-2025_215157_ecomonitor-znv9 onrender com](https://github.com/user-attachments/assets/356f25b8-c4af-4724-87a8-9d5992b29017)
 
@@ -61,4 +63,4 @@ python manage.py runserver
 - Translating the website to other languages.
 - Advanced device management.
 
-Made by Andriy Tymchuk, 2025.
+Made by Andriy Tymchuk, 2026.
