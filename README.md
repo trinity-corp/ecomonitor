@@ -41,7 +41,7 @@ Firmware is available in [ecomonitor-firmware repo](https://github.com/trinity-c
 ## How to run
 ```bash
 # Clone project
-git clone https://github.com/trinity-corp/ecomonitor.git
+git clone https://github.com/galukosi/ecomonitor.git
 cd ecomonitor
 
 # Install dependencies
