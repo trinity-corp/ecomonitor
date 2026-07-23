@@ -130,7 +130,7 @@ def unregister_device(request, device_id):
         messages.success(request, f'Device {device_name} removed from your account')
         return redirect('profile')
     
-    return render(request, 'accounts/confirm_unregister.html', {'device': device})
+    return render(request, '', {'device': device})
 
 @login_required
 def device_management(request):

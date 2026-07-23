@@ -164,12 +164,22 @@ The lowest safe humidity: {device.min_value_limit}% RH
 """, device.telegram_bot_token, device.telegram_user_id),
 
 class DeviceListAPIView(generics.ListAPIView):
-    queryset = Device.objects.all()
     serializer_class = DeviceSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Device.objects.filter(
+            owner=self.request.user
+        )
 
 class DeviceDetailAPIView(generics.RetrieveAPIView):
-    queryset = Device.objects.all()
     serializer_class = DeviceSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Device.objects.filter(
+            owner=self.request.user
+        )
     lookup_field = 'device_id'
 
 class SensorReadingListAPIView(generics.ListAPIView):

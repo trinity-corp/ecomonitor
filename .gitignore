@@ -3,3 +3,10 @@
 db.sqlite3
 __pycache__/
 *.pyc
+lib/
+lib64
+include/
+staticfiles/
+logs/
+*.log
+cookies.txt

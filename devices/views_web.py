@@ -145,9 +145,23 @@ def readings_history(request, device_id):
 
 @login_required
 def clear_readings(request, device_id):
-    """Clears all readings for a device"""
-    SensorReading.objects.filter(device__device_id=device_id).delete()
-    return redirect('../')
+    device = get_object_or_404(
+        Device,
+        device_id=device_id,
+        owner=request.user
+    )
+
+    if request.method == "POST":
+        device.readings.all().delete()
+        messages.success(
+            request,
+            f"Readings cleared for {device.name}"
+        )
+
+    return redirect(
+        "device-detail-web",
+        device_id=device.device_id
+    )
 
 @login_required
 def device_settings(request, device_id):
