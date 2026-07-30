@@ -32,11 +32,18 @@ See also: *[Device Firmware Repository](https://github.com/galukosi/ecomonitor-f
 - **API:** REST (data from ESP32)
 
 ## Supported devices
-- GasGuard
-- TempGuard
-- HumidGuard
+- **GasGuard** - measures carbon monoxide concentration (ppmv)
+- **TempGuard** - measures air temperature (°C)
+- **HumidGuard** - measures air humidity (%RH)
 
-Firmware is available in [ecomonitor-firmware repo](https://github.com/trinity-corp/ecomonitor-firmware/)
+Firmware for every device is available in [ecomonitor-firmware repo](https://github.com/trinity-corp/ecomonitor-firmware/)
+
+## Benefits of EcoMonitor
+The advantages of EcoMonitor over other systems are its affordability, openness, flexibility, and scalability.
+
+EcoMonitor can be used by everyone, from ordinary people to industrial enterprises. It is specifically designed so that you can use either a single device for a specific purpose or an entire network of devices for systematic monitoring of the microclimate.
+
+Note: EcoMonitor is designed solely for monitoring. Its sole purpose is to provide data for further analysis and to alert the user to potential hazards. It does not automatically prevent hazards. 
 
 ## How to run
 ```bash
@@ -46,6 +53,9 @@ cd ecomonitor
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Configure .env
+mv .env.example .env
 
 # Run migrations
 python manage.py makemigrations
